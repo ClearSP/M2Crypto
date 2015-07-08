@@ -54,6 +54,10 @@ extern SSL_METHOD *SSLv3_method(void);
 extern SSL_METHOD *SSLv23_method(void);
 %rename(tlsv1_method) TLSv1_method;
 extern SSL_METHOD *TLSv1_method(void);
+%rename(tlsv1_1_method) TLSv1_1_method;
+extern SSL_METHOD *TLSv1_1_method(void);
+%rename(tlsv1_2_method) TLSv1_2_method;
+extern SSL_METHOD *TLSv1_2_method(void);
 
 %rename(ssl_ctx_new) SSL_CTX_new;
 extern SSL_CTX *SSL_CTX_new(SSL_METHOD *);
@@ -202,6 +206,8 @@ extern long SSL_SESSION_get_timeout(const SSL_SESSION *);
 %constant int SSL_OP_NO_SSLv2             = 0x01000000L;
 %constant int SSL_OP_NO_SSLv3             = 0x02000000L;
 %constant int SSL_OP_NO_TLSv1             = 0x04000000L;
+%constant int SSL_OP_NO_TLSv1_1             = 0x08000000L;
+%constant int SSL_OP_NO_TLSv1_2             = 0x10000000L;
 %constant int SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS = 0x00000800L;
 
 %constant int SSL_MODE_ENABLE_PARTIAL_WRITE = SSL_MODE_ENABLE_PARTIAL_WRITE;
